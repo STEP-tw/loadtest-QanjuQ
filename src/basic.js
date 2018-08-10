@@ -53,20 +53,30 @@ const gcd = function (firstNumber, secondNumber) {
   This function returns the least common multiple of any two numbers
 */
 
-
+const lcm = function (number1, number2) {
+  return number1 * number2 / gcd(number1, number2);
+}
 
 /*
   simpleInterest
   This function returns the simple interest calculated when given
   principle, period and rate of interest(in that order)
 */
-
+const simpleInterest = function (principle, rate, time) {
+  return principle * rate * time / 100;
+};
 
 /*
   compoundInterest
   This function returns the simple interest calculated when given
   principle, period and rate of interest annually(in that order)
 */
+
+const compoundInterest = function (principle, noOfYears, rate, compFreq) {
+  compFreq = (compFreq) ? compFreq : 1;
+  let comp = Math.floor(noOfYears * compFreq);
+  return principle * Math.pow(((100 + rate / compFreq) / 100), comp) - principle;
+};
 
 
 /*
